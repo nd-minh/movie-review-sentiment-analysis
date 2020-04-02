@@ -75,7 +75,7 @@ def predict_fn(input_data, model):
 
     # Using data_X and data_len we construct an appropriate input tensor. Remember
     # that our model expects input data of the form 'len, review[500]'.
-    data_pack = np.hstack((float(data_len), data_X))
+    data_pack = np.hstack((data_len, data_X))
     data_pack = data_pack.reshape(1, -1)
     
     data = torch.from_numpy(data_pack)
@@ -87,6 +87,6 @@ def predict_fn(input_data, model):
     # TODO: Compute the result of applying the model to the input data. The variable `result` should
     #       be a numpy array which contains a single integer which is either 1 or 0
 
-    result = np.round(model.forward(data).detach().numpy())
+    result = np.round(model.forward(data).detach().numpy()).astype(int)
 
     return result
