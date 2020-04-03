@@ -42,7 +42,7 @@ The main deploying steps are:
 
 Now we get a Webapp that is up and running. When we paste a review into the webapp and ask for prediction, the review will be sent by the API to the Lambda function, which will invoke the predicting model to process and return the prediction result. A graph of the process is given as follows.
 
-![alt text](Web-App-Diagram.svg "log-ex")
+![alt text](Web-App-Diagram.png "log-ex")
 
 
 
